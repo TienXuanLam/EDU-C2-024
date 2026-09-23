@@ -1,0 +1,21 @@
+{
+  "kb_version": "SAMPLE-2023.1",
+  "source": "SAMPLE DATA — general alignment with the MEXT 2023 Revised Guideline on Responding to Research Misconduct, NOT sourced from cited primary-document sections or page references. Not verified against the primary source. Must be replaced with an institution-verified, citation-backed policy KB (see docs/07_operation_guide.md 'Knowledge Base Setup') before production use.",
+  "provenance_verified": false,
+  "last_reviewed": "2026-07-19",
+  "institution_scope_note": "This range reflects unverified MEXT-2023-aligned sample ranges only. Institution-specific application is the responsibility of the academic integrity officer.",
+  "ranges": {
+    "fabrication:minor": "Written warning; mandatory research ethics retraining.",
+    "fabrication:moderate": "Suspension of research privileges (1-6 months); retraction of affected work.",
+    "fabrication:severe": "Suspension or expulsion; retraction of affected work; referral for funding-body reporting.",
+    "falsification:minor": "Written warning; correction of affected records.",
+    "falsification:moderate": "Suspension of research privileges (1-6 months); retraction of affected work.",
+    "falsification:severe": "Suspension or expulsion; retraction of affected work; referral for funding-body reporting.",
+    "plagiarism:minor": "Written warning; mandatory citation/academic-integrity training.",
+    "plagiarism:moderate": "Grade nullification or course failure; suspension (1-3 months) for repeat cases.",
+    "plagiarism:severe": "Suspension or expulsion; retraction of affected work.",
+    "other:minor": "Written warning; case-specific corrective action per institutional policy.",
+    "other:moderate": "Formal reprimand; case-specific corrective action per institutional policy.",
+    "other:severe": "Suspension or expulsion; case-specific corrective action per institutional policy."
+  }
+}

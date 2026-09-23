@@ -1,0 +1,15 @@
+# AgentRegistry static manifest. Runtime values belong in config/config.yaml.
+id: "EDU-C2-024"
+name: "UniversityAcademicMisconductInvestigationReportDraftingAgent"
+namespace: "EDU"
+version: "0.2.0"
+enabled: true
+category: "Cat 2"
+generation_mode: "llm"
+industry: "EDU"
+base_type: "DocGenerationAgent"
+class: "src.graph.graph.UniversityAcademicMisconductInvestigationReportDraftingAgent"
+required_trust_level: "VERIFIED_EXTERNAL"
+requires:
+  secrets: ["AZURE_OPENAI_API_KEY", "AZURE_OPENAI_ENDPOINT", "AZURE_OPENAI_DEPLOYMENT"]
+  extras: ["openai"]

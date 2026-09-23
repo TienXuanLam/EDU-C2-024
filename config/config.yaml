@@ -1,0 +1,31 @@
+# Runtime parameters — distinct from config/agent.yaml, the static
+# manifest. No HITL: legal counsel / integrity officer review of the
+# draft is an out-of-band human process, not a technical interrupt()
+# checkpoint — a mandatory-disclaimer pattern is used instead of HITL
+# for this template.
+max_retry: 3
+memory_enabled: false
+timeout_s: 30
+# llm_provider/llm_model are documentation-only fields -- PreProcessNode and
+# MainNode build their AzureOpenAIClient per invocation from the
+# AZURE_OPENAI_API_KEY/AZURE_OPENAI_ENDPOINT/AZURE_OPENAI_DEPLOYMENT secrets
+# (see src/services/azure_openai_service.py), not from these values. The
+# actual deployment/model is whatever AZURE_OPENAI_DEPLOYMENT resolves to.
+llm_provider: "azure_openai"
+llm_model: "gpt-4o-mini"
+
+# Sanction-range policy KB (review finding H2): institution-configurable path to
+# a versioned sanction-range KB JSON file (schema:
+# src/services/kb/sanction_ranges.json, which must set
+# provenance_verified: true once the institution has verified it against a
+# cited primary source — review finding M1). Uncomment and point at an
+# institution-specific policy file to override the shipped UNVERIFIED
+# SAMPLE reference KB (src/services/kb/sanction_ranges.json,
+# provenance_verified: false — see docs/07_operation_guide.md "Knowledge
+# Base Setup"). Loading is fail-closed (src/services/sanction_range_lookup_service.py)
+# — a missing/invalid file fails agent.compile(), it never falls back to a
+# silent default. This file is read by src/api/server.py at process startup
+# (review finding H1, second round) — self.config is NOT auto-populated from
+# this file when the agent class is constructed directly/outside
+# AgentRegistry; confirm any custom entry point also loads it.
+# kb_path: "src/services/kb/sanction_ranges.json"
